@@ -14,3 +14,8 @@
 # PDF-Dateien (optional, falls du sie nicht versionieren möchtest)
 *.pdf
 
+# macOS Systemdateien
+.DS_Store
+
+# VS Code Settings (optional)
+.vscode/
