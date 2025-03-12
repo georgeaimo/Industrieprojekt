@@ -1,0 +1,90 @@
+% ====================== GRUNDLAGEN ======================
+% Sprache und Schrift
+\usepackage[T1]{fontenc}          % Bessere Unterstützung für europäische Zeichensätze
+\RedeclareSectionCommand[
+  font=\Huge\normalfont\rmfamily\bfseries, % Adjust size (options: \Huge, \LARGE, \Large, etc.)
+  beforeskip=2cm, % Space before the chapter title
+  afterskip=1cm % Space after the chapter title
+]{chapter}
+
+
+\usepackage[utf8]{inputenc}       % UTF-8 Zeichenkodierung
+\usepackage[ngerman]{babel}       % Deutsche Sprachspezifika (Silbentrennung, Übersetzungen)
+\usepackage{grffile}              % Erlaubt Sonderzeichen in Bilddateipfaden
+\renewcommand{\baselinestretch}{1} % Zeilenabstand (1 = Standard)
+
+
+\usepackage{scrhack}
+
+% ====================== MATHEMATIK ======================
+\usepackage{amsmath}              % Verbesserte Mathematikumgebungen (equation, align)
+\usepackage{amsfonts}             % Zusätzliche Mathe-Schriftarten (mathbb)
+\usepackage{amssymb}              % Mathematische Symbole
+\usepackage[makeroom]{cancel}     % Durchstreichen von Termen (\cancel{...})
+\usepackage{lscape}               % Querformat-Seiten für umfangreiche Formeln/Tabellen
+
+% ====================== GRAFIK & FARBEN =================
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor} % Erweiterte Farben
+\usepackage{graphicx}             % Standardgrafikeinbindung
+%\usepackage[demo]{graphicx}      % Dummies als Bilder +++ besser beim compilieren +++
+\usepackage{subcaption}           % Unterbilder mit eigenen Beschriftungen
+\usepackage[font=sf]{caption}     % Serifenlose Schrift in Bildunterschriften
+\usepackage{rotating}             % Drehung von Grafiken/Text (sideways-Umgebung)
+\usepackage{float}                % Präzise Bildplatzierung (H-Option)
+\usepackage{tikz}                 % Vektorgrafiken zeichnen
+\usetikzlibrary{                  % TikZ-Erweiterungen
+    shapes.geometric, 
+    arrows.meta,
+    positioning
+    } 
+
+% ====================== TABELLEN & LISTEN ===============
+\usepackage{booktabs}             % Professionelle Tabellenformatierung
+\usepackage{tabularx}             % Tabellen mit automatischer Spaltenanpassung
+\usepackage{makecell}             % Mehrzeilige Tabellenzellen
+\usepackage{multirow}             % Verbundene Zeilen in Tabellen
+\usepackage{enumitem}             % Anpassbare Aufzählungen (Listen)
+
+% ====================== SEITENLAYOUT ====================
+\usepackage[headsepline=0pt]{scrlayer-scrpage} % KOMA-Script-kompatibles Paket für Kopf- und Fußzeilen
+\clearpairofpagestyles        % Löscht alle Standard-Stile
+\cfoot{\pagemark}             % Seitenzahl in der Fußzeile zentriert
+\KOMAoptions{parskip=full}   % Absatzabstände statt Einrückung
+\setparsizes{10pt plus1pt}{0pt}{1em plus1fil} % Äquivalent zu deiner `parskip`-Konfiguration
+
+% ====================== HYPERLINKS & VERWEISE ===========
+\usepackage[pdftex,pdfauthor={Lars Meinke}]{hyperref} % Interaktive Links im PDF
+\usepackage[ngerman]{cleveref}    % Intelligente Verweise (\cref)
+\usepackage{bookmark}             % Verbesserte PDF-Lesezeichen
+
+% ============== Nummerierung ==============
+\usepackage{chngcntr}
+\counterwithin{figure}{chapter}  % Figures numbered as 1.1, 1.2, 2.1, etc.
+\counterwithin{table}{chapter}   % Tables numbered similarly
+\counterwithin{equation}{chapter}% Equations numbered per chapter
+
+% ====================== LITERATUR & ZITATE ==============
+\usepackage[numbers]{natbib}      % Numerisches Zitieren (IEEE-Stil)
+%\usepackage{acronym}  
+\usepackage{acro}            % Abkürzungsverzeichnis
+
+% ====================== SONSTIGE PAKETE =================
+\usepackage{siunitx}              % SI-Einheiten (z.B. \SI{10}{\meter})
+\usepackage{verbatim}             % Erweiterte Code-Umgebungen
+\usepackage{pdfpages}             % PDF-Seiten direkt einbinden
+\usepackage[title]{appendix}      % Anhangformatierung
+
+% ====================== DESIGNANPASSUNGEN ===============
+\usepackage{xcolor}                % Für Farben (falls nicht schon geladen)
+\definecolor{FHBlau}{RGB}{16,46,92} % Corporate Color
+
+% Customize chapter/section title colors with KOMA-Script
+\addtokomafont{chapter}{\color{FHBlau}}      % Kapitelüberschriften
+\addtokomafont{section}{\color{FHBlau}}      % Abschnittsüberschriften
+\addtokomafont{subsection}{\color{FHBlau}}   % Unterabschnitte
+
+% ====================== HYPHENATION =====================
+\hyphenation{Über-trag-ungs-funk-tion Differ-en-tial-glei-chung}
+\hyphenpenalty=20                 % Silbentrennungseinstellungen
+\emergencystretch=1em
+

@@ -1,0 +1,40 @@
+% ====================== PRAKTISCHE BEFEHLE ======================
+% (Entfernen der %-Zeichen zum Aktivieren)
+
+%%% Materialien und Normen
+\newcommand{\stahlguete}[1]{\textbf{1.${#1}$}}          % Stahlgüteformatierung, z.B. \stahlgüte{0578}
+\newcommand{\din}[1]{DIN {#1}}                         % Normenreferenz, z.B. \din{EN 10025-2}
+
+%%% Einheiten (nutzt siunitx)
+\newcommand{\MPa}[1]{\SI{#1}{\mega\pascal}}            % Druckeinheit, z.B. \MPa{350}
+\newcommand{\kNm}[1]{\SI{#1}{\kilo\newton\meter}}      % Drehmoment, z.B. \kNm{12.5}
+
+%%% Werkstoffkunde
+\newcommand{\alusil}{\text{AlSi}7\text{Mg0.3}}         % Aluminium-Silizium-Legierung
+\newcommand{\cfk}[1]{CFK-{#1}}                         % Kohlefaserformat, z.B. \cfk{T300}
+
+%%% Technische Diagramme (TikZ)
+\newcommand{\koordsystem}{%                            % Standard-Koordinatensystem
+  \begin{tikzpicture}[scale=0.6]
+    \draw[thick,->] (0,0) -- (2,0) node[right]{$x$};
+    \draw[thick,->] (0,0) -- (0,2) node[above]{$y$};
+    \draw[thick,->] (0,0) -- (-1.2,-1.2) node[below left]{$z$};
+  \end{tikzpicture}}
+
+%%% Mechanische Elemente
+\newcommand{\lager}[2]{%                               % Standard-Lagerdarstellung
+  \begin{tikzpicture}
+    \node[draw,circle,minimum size=8mm] at (#1,#2) {};
+    \draw[thick] (#1-0.4,#2) -- (#1+0.4,#2);
+  \end{tikzpicture}}
+
+
+%%% Finite-Elemente-Methode
+%\newcommand{\fea}{\textsc{Fem}\xspace}                  % FEM-Abkürzung mit automat. Leerzeichen
+%\newcommand{\meshparams}[3]{%                          % Netzparameter
+%  \begin{itemize}[noitemsep]
+%    \item Elementgröße: #1 mm
+%    \item Knotenanzahl: #2
+%    \item Verfeinerung: #3
+%  \end{itemize}
+%}

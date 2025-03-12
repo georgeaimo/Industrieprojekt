@@ -1,0 +1,54 @@
+\documentclass[hidelinks,12pt,listof=totoc,a4paper]{scrreprt} % Oder scrreprt, falls KOMA-Script genutzt wird
+
+\input{settings/header.tex} % Präambel und Pakete
+\input{settings/commands.tex} % Präambel und Pakete
+\input{settings/acronyms.tex}
+
+\begin{document}
+\pagestyle{empty}             % Keine Kopf-/Fußzeilen auf der Titelseite
+\input{titelseite/titelseite.tex} % Deckblatt
+\newpage
+\pagestyle{scrheadings}       % Aktiviere Kopf-/Fußzeilen ab hier
+\pagenumbering{Roman}         % Römische Seitenzahlen
+\tableofcontents              % Inhaltsverzeichnis
+\newpage
+
+
+
+
+\printacronyms%[name=Abkürzungsverzeichnis]
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\newpage
+
+\listoffigures
+\listoftables
+
+
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{scrheadings} 
+\clearpage
+\setcounter{page}{1}
+
+
+\input{chapters/01_einleitung.tex} % Einleitung
+\input{chapters/02_theorie.tex} % Theoretische Grundlagen
+\input{chapters/03_methode.tex} % Methodik
+\input{chapters/04_ergebnisse.tex} % Ergebnisse
+\input{chapters/05_diskussion.tex} % Diskussion
+\input{chapters/06_fazit.tex} % Fazit
+\appendix
+
+\input{anhang/01_anhang_a.tex} % Anhang A
+\input{anhang/02_anhang_b.tex} % Anhang B
+\input{anhang/03_anhang_c.tex} % Anhang C
+\bibliographystyle{IEEEtranN}
+\bibliography{references/literatur_IP_.bib} % Literaturverzeichnis
+%\input{templates/erklärung.tex} % Eigenständigkeitserklärung
+
+\end{document}
+
+
+
+
