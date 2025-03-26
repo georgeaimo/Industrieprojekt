@@ -11,6 +11,9 @@
 *.synctex.gz
 *.fdb_latexmk
 
+#word-datein
+*.docx
+
 # PDF-Dateien (optional, falls du sie nicht versionieren möchtest)
 *.pdf
 
